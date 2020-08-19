@@ -1,0 +1,42 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\altera\13.0sp1\quartus\bin64\p1\simulation\modelsim
+Ecms
+Z1 w1573638646
+Z2 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
+Z3 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z4 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z5 dC:\altera\13.0sp1\quartus\bin64\p1\simulation\modelsim
+Z6 8C:/altera/13.0sp1/quartus/bin64/p1/CMS.vhd
+Z7 FC:/altera/13.0sp1/quartus/bin64/p1/CMS.vhd
+l0
+L5
+V;noHV^;DCPB<X`F_G>nT@0
+!s100 2k837;Rk3RbBhFHZjz`160
+Z8 OV;C;10.1d;51
+31
+!i10b 1
+Z9 !s108 1573638678.466000
+Z10 !s90 -reportprogress|300|-93|-work|work|C:/altera/13.0sp1/quartus/bin64/p1/CMS.vhd|
+Z11 !s107 C:/altera/13.0sp1/quartus/bin64/p1/CMS.vhd|
+Z12 o-93 -work work -O0
+Z13 tExplicit 1
+Abehaviour
+R2
+R3
+R4
+DEx4 work 3 cms 0 22 ;noHV^;DCPB<X`F_G>nT@0
+l45
+L20
+VQQ`TG^JzlXI1GGD^jBG`72
+!s100 N2Z?NR5=HT8^N2Q09T3JQ3
+R8
+31
+!i10b 1
+R9
+R10
+R11
+R12
+R13

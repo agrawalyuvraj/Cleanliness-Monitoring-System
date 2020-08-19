@@ -1,0 +1,23 @@
+library ieee;						-- Library declaration
+use ieee.std_logic_1164.all;	-- Use std_logic_1164 package from ieee library
+use ieee.numeric_std.all;
+
+entity CMS is
+	port (CLK : in std_logic;
+			RSTN1 : in std_logic;
+			--Ports for LCD
+			D : out std_logic_vector(7 downto 0);
+			RS, RW, EN : out std_logic
+			--Ports for counter
+			RSTN1 : in std_logic;
+			inp1 : in std_logic;
+			inp2 : in std_logic;
+			A1 : inout std_logic_vector(3 downto 0);
+			A2 : inout std_logic_vector(3 downto 0);
+			Y1 : out std_logic_vector(6 downto 0);
+			Y2 : out std_logic_vector(6 downto 0));
+			);
+end CMS;
+
+architecture behaviour of CMS is
+

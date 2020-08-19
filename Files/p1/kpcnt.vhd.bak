@@ -1,0 +1,39 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity kpcnt is
+    port(
+        clk : in std_logic;
+        rst : in std_logic;
+        input_from_debouncer : in std_logic -- assumed to be synchronous to clk
+        -- some output to be defined
+        );
+end entity;
+
+architecture rtl of kpcnt is
+    signal input_delay : std_logic;
+    signal input_rising_edge : std_logic;
+    use ieee.numeric_std.all;
+    signal kpcounter : unsigned(7 downto 0) := (others => '0');
+begin
+    -- create delayed input signal
+    delay_input : process(clk)
+    begin
+        if rising_edge(clk) then
+            input_delay <= input_from_debouncer;
+        end if;
+    end process;
+    -- detect 0->1 transition
+    input_rising_edge <= '1' when input_from_debouncer = '1' and input_delay = '0' else '0';
+    -- count the number of 0->1 transitions
+    kpcounter_proc : process(clk)
+    begin
+        if rising_edge(clk) then
+            if rst = '1' then
+                kpcounter <= (others => '0');
+            elsif input_rising_edge = '1' then
+                kpcounter <= kpcounter + 1;
+            end if;
+        end if;
+    end process;    
+end architecture;

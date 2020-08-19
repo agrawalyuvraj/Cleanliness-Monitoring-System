@@ -1,0 +1,11 @@
+
+State Machine - |CMS2|Q
+Name Q.IDLE Q.S6 Q.S5 Q.S4 Q.S3 Q.S2 Q.S1 Q.S0 
+Q.S0 0 0 0 0 0 0 0 0 
+Q.S1 0 0 0 0 0 0 1 1 
+Q.S2 0 0 0 0 0 1 0 1 
+Q.S3 0 0 0 0 1 0 0 1 
+Q.S4 0 0 0 1 0 0 0 1 
+Q.S5 0 0 1 0 0 0 0 1 
+Q.S6 0 1 0 0 0 0 0 1 
+Q.IDLE 1 0 0 0 0 0 0 1 

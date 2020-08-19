@@ -1,0 +1,77 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow Model Setup 'CLK'
+Slack : -3.545
+TNS   : -57.465
+
+Type  : Slow Model Setup 'CLK1'
+Slack : -2.957
+TNS   : -71.373
+
+Type  : Slow Model Setup 'CNT_CMD[0]'
+Slack : -1.777
+TNS   : -10.471
+
+Type  : Slow Model Hold 'CNT_CMD[0]'
+Slack : -2.681
+TNS   : -14.106
+
+Type  : Slow Model Hold 'CLK'
+Slack : -2.548
+TNS   : -2.548
+
+Type  : Slow Model Hold 'CLK1'
+Slack : -1.010
+TNS   : -3.366
+
+Type  : Slow Model Minimum Pulse Width 'CLK'
+Slack : -1.941
+TNS   : -37.557
+
+Type  : Slow Model Minimum Pulse Width 'CLK1'
+Slack : -0.742
+TNS   : -54.908
+
+Type  : Slow Model Minimum Pulse Width 'CNT_CMD[0]'
+Slack : 0.500
+TNS   : 0.000
+
+Type  : Fast Model Setup 'CLK'
+Slack : -0.589
+TNS   : -5.803
+
+Type  : Fast Model Setup 'CLK1'
+Slack : -0.529
+TNS   : -6.183
+
+Type  : Fast Model Setup 'CNT_CMD[0]'
+Slack : -0.006
+TNS   : -0.006
+
+Type  : Fast Model Hold 'CLK'
+Slack : -1.357
+TNS   : -1.357
+
+Type  : Fast Model Hold 'CNT_CMD[0]'
+Slack : -1.142
+TNS   : -5.950
+
+Type  : Fast Model Hold 'CLK1'
+Slack : -0.665
+TNS   : -2.928
+
+Type  : Fast Model Minimum Pulse Width 'CLK'
+Slack : -1.380
+TNS   : -25.380
+
+Type  : Fast Model Minimum Pulse Width 'CLK1'
+Slack : -0.500
+TNS   : -37.000
+
+Type  : Fast Model Minimum Pulse Width 'CNT_CMD[0]'
+Slack : 0.500
+TNS   : 0.000
+
+------------------------------------------------------------

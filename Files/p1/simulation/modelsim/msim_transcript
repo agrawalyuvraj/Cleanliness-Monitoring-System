@@ -1,0 +1,65 @@
+# Reading C:/altera/13.0sp1/modelsim_ase/tcl/vsim/pref.tcl 
+# do p1_run_msim_rtl_vhdl.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vcom -93 -work work {C:/altera/13.0sp1/quartus/bin64/p1/CMS.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity CMS
+# -- Compiling architecture behaviour of CMS
+# 
+vsim work.cms
+# vsim work.cms 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.cms(behaviour)
+add wave -position insertpoint  \
+sim:/cms/CLK \
+sim:/cms/RSTN \
+sim:/cms/inp1 \
+sim:/cms/inp2 \
+sim:/cms/X1 \
+sim:/cms/X2
+add wave -position insertpoint  \
+sim:/cms/CLK1
+force -freeze sim:/cms/CLK 1 0, 0 {50 ps} -r 100
+add wave -position insertpoint  \
+sim:/cms/RSTIN
+force -freeze sim:/cms/RSTIN 0 0
+force -freeze sim:/cms/RSTN 0 0
+force -freeze sim:/cms/inp1 0 0
+force -freeze sim:/cms/inp2 0 0
+run
+run
+run
+run
+run
+force -freeze sim:/cms/inp1 1 0
+run
+run
+run
+force -freeze sim:/cms/inp2 1 0
+run
+run
+run
+force -freeze sim:/cms/inp1 0 0
+run
+run
+run
+force -freeze sim:/cms/inp1 1 0
+run
+run
+run

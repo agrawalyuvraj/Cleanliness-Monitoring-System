@@ -80,7 +80,9 @@ solve the issues it’s making was intended for.
 ## References
 
 [1] https://lastminuteengineers.com/a6-gsm-gprs-module-arduino-tutorial/
+
 [2] https://www.arduino.cc/en/Tutorial/HomePage?from=Main.Tutorials
+
 [3] https://www.circuito.io/app?components=512
 
 

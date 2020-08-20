@@ -1,0 +1,50 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use work.cs254.all;
+
+entity COUNTER_SYNC is -- Entity declaration
+	port(CLK : in std_logic; -- Clock input of the counter
+		EN : in std_logic; -- Enable input of the counter
+		RSTN : in std_logic; -- Active low reset input of the counter
+		LDN : in std_logic; -- Active low load input of the counter
+		D : inout std_logic_vector(3 downto 0); -- Value to be assigned to the counter
+
+		-- when LDN is active
+
+		C : out std_logic; -- Carry output from the counter
+		Q : inout std_logic_vector(3 downto 0)); -- Output of the counter
+end COUNTER_SYNC;
+
+architecture FUNCTIONALITY of COUNTER_SYNC is 
+
+	signal A1, A2, A3, X1, X2, X3, X4, M1, M2, M3, M4: std_logic;
+	signal Qn: std_logic_vector (3 downto 0);
+	
+begin
+
+	U0: D_FF port map (D(0), CLK, '1', RSTN, Q(0), Qn(0));
+	U1: D_FF port map (D(1), CLK, '1', RSTN, Q(1), Qn(1));
+	U2: D_FF port map (D(2), CLK, '1', RSTN, Q(2), Qn(2));
+	U3: D_FF port map (D(3), CLK, '1', RSTN, Q(3), Qn(3));
+	
+	U4: AND1 port map (Qn(0), EN, A1);
+	U5: AND1 port map (Qn(1), A1, A2);
+	U6: AND1 port map (Qn(2), A2, A3);
+	U7: AND1 port map (Qn(3), A3, C);
+	
+	U8: XOR_1 port map (Q(0), EN, X1);
+	U9: XOR_1 port map (Q(1), A1, X2);
+	U10: XOR_1 port map (Q(2), A2, X3);
+	U11: XOR_1 port map (Q(3), A3, X4);
+	
+	U12: mux2 port map (D(0), X1, LDN, M1);
+	U13: mux2 port map (D(1), X2, LDN, M2);
+	U14: mux2 port map (D(2), X3, LDN, M3);
+	U15: mux2 port map (D(3), X4, LDN, M4);
+	
+	U16: mux2 port map ('1', M1, RSTN, D(0));
+	U17: mux2 port map ('0', M2, RSTN, D(1));
+	U18: mux2 port map ('0', M3, RSTN, D(2));
+	U19: mux2 port map ('1', M4, RSTN, D(3));
+	
+end FUNCTIONALITY;

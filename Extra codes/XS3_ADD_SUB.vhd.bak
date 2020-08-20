@@ -1,0 +1,43 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use work.CS254.all;
+
+entity XS3_ADD_SUB is -- Entity declaration
+port(A, B : in std_logic_vector(3 downto 0); -- Input XS3 numbers
+A_SBAR : in std_logic; -- 1 for addition, 0 for subtraction
+Y : out std_logic_vector(7 downto 0); -- Output BCD number
+
+end XS3_ADD_SUB;
+
+architecture FUNCTIONALITY of XS3_ADD_SUB is
+
+
+signal A_SBARnot : std_logic;
+signal O1, O2, S1 : std_logic_vector(3 downto 0);
+signal C1, C2, CS : std_logic;
+
+begin 
+	
+	
+	U1 : NOT_1 port map (A_SBAR, A_SBARnot);
+	U2 : four_bit_add_sub port map (A_SBARnot, A(0), A(1), A(2), A(3), B(0), B(1), B(2), B(3), O1(0), O1(1), O1(2), O1(3), C1);
+	U3 : four_bit_add_sub port map ('1', O1(0), O1(1), O1(2), O1(3), '0', '1', '1', '0', O2(0), O2(1), O2(2), O2(3), C2);
+
+bank1:	
+for i in 0 to 3 generate	
+	U4 : MUX_2_1 port map(O2(i), O1(i), C1, S1(i));
+end generate;
+
+bank2:	
+for i in 0 to 3 generate	
+	U5 : MUX_2_1 port map(S1(i), O1(i), A_SBARnot, Y(i);
+end generate;
+
+	U6 : MUX_2_1 port map('0', '1', C1, CS);
+	U7 : MUX_2_1 port map(CS, '0', A_SBARnot, Y(4));
+	
+	Y(5) =>'0';
+	Y(6) =>'0';
+	Y(7) =>'0';
+	
+end FUNCTIONALITY;	

@@ -1,0 +1,40 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use work.cs254.all;
+
+entity TONE_GEN is
+port(CLK, RSTN: in std_logic;
+	  TONE_OUT: out std_logic);
+end TONE_GEN;
+
+architecture FUNCTIONALITY of TONE_GEN is
+
+signal SA, RE, GA, MA, PA, DA, NI, SA1 : std_logic := '0';
+signal COUNT_SA : integer range 0 to 21 := 0;
+signal COUNT_RE : integer range 0 to 19 := 0;
+signal COUNT_GA : integer range 0 to 17 := 0;
+signal COUNT_MA : integer range 0 to 16 := 0;
+signal COUNT_PA : integer range 0 to 14 := 0;
+signal COUNT_DA : integer range 0 to 13 := 0;
+signal COUNT_NI : integer range 0 to 11 := 0;
+signal COUNT_SA_1 : integer range 0 to 10 := 0;
+
+ 
+
+begin
+
+	if (CLK’event and CLK = ’1’) then
+		if (COUNT_SA1 = 21) then -- 240 Hz
+			COUNT_SA1 := 0;
+			SA1 <= not SA1;
+		else
+			COUNT_SA1 := COUNT_SA1 + 1;
+		end if;
+	end if;
+
+	if (TONE_TIME <= 5000) then --for 5000
+		if (COUNT = 0) then
+		TONE_OUT <= SA1;
+		elsif (COUNT = 1) then
+		TONE_OUT <= re;
+	end FUNCTIONALITY;

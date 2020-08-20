@@ -1,0 +1,11 @@
+
+State Machine - |LED_INDICATOR|Q
+Name Q.state_bit_2 Q.state_bit_1 Q.state_bit_0 
+Q.S0 0 0 0 
+Q.S1 0 1 1 
+Q.S2 0 1 0 
+Q.S3 1 0 1 
+Q.S4 1 0 0 
+Q.S5 1 1 0 
+Q.S6 1 1 1 
+Q.S7 0 0 1 

@@ -1,0 +1,18 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use work.CS254.all;
+
+entity BCD4_DN_CNTR is -- Entity declaration
+port(   CLK : in std_logic; -- Clock input of the counter
+        EN_DVD : in std_logic; -- Active low reset input of the clock divider
+        RSTN : in std_logic; -- Active low reset input of the counter
+        LDN : in std_logic; -- Active low load input of the counter
+        DIG : in std_logic_vector(1 downto 0); -- Select signals to select a digit
+        I : in std_logic_vector(3 downto 0); -- Value to be assigned to the counter
+                                             -- when LDN is active
+        COUT : inout std_logic; -- Carry out from the fourth digit
+        S : inout std_logic_vector(1 downto 0); -- Output of the clock divider
+        Q : inout std_logic_vector(3 downto 0));-- Output of the counter
+        end BCD4_DN_CNTR;
+
+architecture FUNCTIONALITY of BCD4_DN_CNTR is

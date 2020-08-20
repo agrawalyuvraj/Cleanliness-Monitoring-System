@@ -1,0 +1,34 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity BCD2SSD is 
+port(X : in std_logic_vector(3 downto 0);
+Y : out std_logic_vector(6 downto 0);
+F : out std_logic);
+end BCD2SSD;
+
+architecture FUNCTIONALITY of BCD2SSD is
+
+signal Xnot : std_logic_vector(3 downto 0);
+signal a1, a2, a3, a4, a5, a6, a7, a8, a9: std_logic;
+
+begin 
+
+bank:
+for i in 0 to 3 generate
+	U0 : NOT_1 port map (X(i), Xnot(i));
+end generate;
+
+	U1 : AND_1 port map (X(1), X(3), a1);
+	U2 : AND_1 port map (Xnot(1), Xnot(3), a2);
+	U3 : AND_1 port map (X(2), X(3), a3);
+	U4 : AND_1 port map (Xnot(2), Xnot(3), a4);
+	U5 : AND_1 port map (X(2), Xnot(3), a5);
+	U6 : AND_1 port map (X(1), Xnot(2), a6);
+	U7 : AND_1 port map (X(1), X(2), a7);
+	U8 : AND_1 port map (Xnot(1), X(2), a8);
+	U9 : AND_1 port map (Xnot(0), a8, a9);
+	U10 : AND_1 port map (X(3), a6, a10);
+	U11 : AND_1 port map (Xnot(3), a7, a11);
+
+end FUNCTIONALITY;

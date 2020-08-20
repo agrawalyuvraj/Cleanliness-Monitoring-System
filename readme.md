@@ -37,6 +37,7 @@ FPGA board and is used as input for the variables in the Ar-
 duino board which then sends the message according to the
 variables and number fed in the GSM module.
 
+![System Overwiew](systemoverview.png)
 
 ## Implementation Details
 
@@ -58,6 +59,9 @@ ually to the Arduino board for each input and then converted
 back to integer values and fed as input to the three vari-
 ables,for the wing and the GSM module uses these variables
 and the message is then sent accordingly.
+
+![Circuit](circuit.png)
+![Arduino Connections](arduinoconnections.png)
 
 ## Results
 
